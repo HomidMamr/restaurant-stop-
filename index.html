@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#000000">
+  <title>Шаверма Stop - Самая вкусная шаверма в городе!</title>
+  <link rel="stylesheet" href="styles.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <header class="hero">
+    <!-- Мобильное меню (overlay) -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-content">
+        <a href="#benefits" class="mobile-menu-item" onclick="scrollToSection('benefits'); closeMobileMenu();">
+          <i class="fas fa-star"></i>
+          <span>Преимущества</span>
+        </a>
+        <a href="#menu" class="mobile-menu-item" onclick="scrollToSection('menu'); closeMobileMenu();">
+          <i class="fas fa-utensils"></i>
+          <span>Меню</span>
+        </a>
+        <a href="#delivery" class="mobile-menu-item" onclick="scrollToSection('delivery'); closeMobileMenu();">
+          <i class="fas fa-motorcycle"></i>
+          <span>Доставка</span>
+        </a>
+        <a href="#contacts" class="mobile-menu-item" onclick="scrollToSection('contacts'); closeMobileMenu();">
+          <i class="fas fa-phone"></i>
+          <span>Контакты</span>
+        </a>
+        <div class="mobile-menu-cta">
+          <button class="btn btn-primary mobile-order-btn" onclick="scrollToSection('order'); closeMobileMenu();">
+            <i class="fab fa-telegram"></i>
+            Заказать сейчас
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Мобильная кнопка меню в правом верхнем углу -->
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <div class="container">
+      <!-- Десктопное меню навигации -->
+      <nav class="desktop-nav">
+        <div class="logo">
+          <span class="stop-text">Stop</span>
+          <span class="road-sign-small">
+            <svg viewBox="0 0 120 140" class="stop-icon-small">
+              <!-- Ножка знака -->
+              <rect x="55" y="110" width="10" height="30" fill="#777" rx="2" />
+              <!-- Основной круг знака -->
+              <circle cx="60" cy="60" r="50" fill="#e74c3c" stroke="white" stroke-width="5" />
+              <!-- Горизонтальная линия -->
+              <line x1="20" y1="60" x2="100" y2="60" stroke="white" stroke-width="15" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span class="accent">Шаверма</span>
+        </div>
+        <div class="nav-links">
+          <a href="#benefits" class="nav-link" onclick="scrollToSection('benefits'); return false;">
+            <i class="fas fa-star"></i>
+            <span>Преимущества</span>
+          </a>
+          <a href="#menu" class="nav-link" onclick="scrollToSection('menu'); return false;">
+            <i class="fas fa-utensils"></i>
+            <span>Меню</span>
+          </a>
+          <a href="#delivery" class="nav-link" onclick="scrollToSection('delivery'); return false;">
+            <i class="fas fa-motorcycle"></i>
+            <span>Доставка</span>
+          </a>
+          <a href="#contacts" class="nav-link" onclick="scrollToSection('contacts'); return false;">
+            <i class="fas fa-phone"></i>
+            <span>Контакты</span>
+          </a>
+          <button class="btn btn-primary nav-order-btn" onclick="scrollToSection('order'); return false;">
+            Заказать
+          </button>
+        </div>
+      </nav>
+      
+      <div class="header-content">
+        <h1 class="premium-title">
+          <span class="stop-text">Stop</span>
+          <span class="road-sign">
+            <svg viewBox="0 0 120 140" class="stop-icon">
+              <!-- Ножка знака -->
+              <rect x="55" y="110" width="10" height="30" fill="#777" rx="2" />
+              <!-- Основной круг знака -->
+              <circle cx="60" cy="60" r="50" fill="#e74c3c" stroke="white" stroke-width="5" />
+              <!-- Горизонтальная линия -->
+              <line x1="20" y1="60" x2="100" y2="60" stroke="white" stroke-width="15" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span class="accent">Шаверма</span>
+        </h1>
+
+        <p class="premium-slogan">
+          Место, где останавливается <span class="hunger">голод</span>
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="scrollToSection('order'); return false;">
+            <i class="fab fa-telegram"></i>
+            Заказать в чат-боте
+          </button>
+          <button class="btn btn-secondary" onclick="scrollToSection('menu'); return false;">
+            <i class="fas fa-utensils"></i>
+            Посмотреть меню
+          </button>
+        </div>
+
+
+      </div>
+    </div>
+  </header>
+
+  <section id="benefits" class="section-gray">
+    <div class="container">
+      <h2 class="section-title">Почему нас выбирают тысячи?</h2>
+      <p class="section-subtitle">Мы не просто готовим еду — мы создаем незабываемые впечатления</p>
+
+      <div class="benefits-grid">
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <h3 class="card-title">100% свежесть</h3>
+          <p class="card-text">Продукты доставляются каждое утро от проверенных поставщиков. Никаких заморозок!</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-weight-hanging"></i>
+          </div>
+          <h3 class="card-title">Честный XXL</h3>
+          <p class="card-text">Наши порции действительно большие — честный размер без обмана</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-stopwatch"></i>
+          </div>
+          <h3 class="card-title">Молниеносно быстро</h3>
+          <p class="card-text">Среднее время приготовления 3-5 минут. Горячая шаверма без ожидания</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="section-light">
+    <div class="container">
+      <h2 class="section-title">Наше меню</h2>
+      <p class="section-subtitle">Каждое блюдо готовится с любовью и только из свежих ингредиентов</p>
+
+      <div class="menu-categories">
+        <button class="btn btn-outline category-btn active" data-category="shaurma">
+          <i class="fas fa-utensils"></i> Шаверма
+        </button>
+        <button class="btn btn-outline category-btn" data-category="drinks">
+          <i class="fas fa-glass-martini-alt"></i> Напитки
+        </button>
+        <button class="btn btn-outline category-btn" data-category="snacks">
+          <i class="fas fa-cheese"></i> Закуски
+        </button>
+      </div>
+
+      <div class="menu-container">
+        <!-- Предварительный контент для избежания "обновления" -->
+        <div class="menu-card">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop"
+              alt="Классическая шаверма" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Классическая шаверма</h3>
+            <p class="card-text">Свежие овощи, курица, фирменный соус</p>
+            <div class="details">
+              <span class="item-details">350г</span>
+              <span class="price">250₽</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=400&h=300&fit=crop"
+              alt="Острая шаверма" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Острая шаверма</h3>
+            <p class="card-text">С перцем чили и острым соусом</p>
+            <div class="details">
+              <span class="item-details">350г</span>
+              <span class="price">280₽</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&h=300&fit=crop"
+              alt="Говяжья шаверма" loading="lazy">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Говяжья шаверма</h3>
+            <p class="card-text">С нежной говядиной и грибами</p>
+            <div class="details">
+              <span class="item-details">400г</span>
+              <span class="price">320₽</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="delivery" class="delivery-section">
+    <div class="container">
+      <h2 class="section-title">Доставка и самовывоз</h2>
+      <p class="section-subtitle">Выберите удобный способ получения заказа</p>
+
+      <div class="delivery-options">
+        <div class="delivery-option recommended">
+          <div class="option-header">
+            <span class="option-badge">Популярно</span>
+            <div class="option-icon">🏍️</div>
+            <h3>Быстрая доставка</h3>
+          </div>
+          <div class="option-details">
+            <div class="detail-item">
+              <span class="detail-label">Время:</span>
+              <span class="detail-value">25-35 мин</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Стоимость:</span>
+              <span class="detail-value">От 150₽</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Зона:</span>
+              <span class="detail-value">Весь город</span>
+            </div>
+          </div>
+          <button class="option-btn">Выбрать доставку</button>
+        </div>
+
+        <div class="delivery-option">
+          <div class="option-header">
+            <span class="option-badge free">Бесплатно</span>
+            <div class="option-icon">🚶</div>
+            <h3>Самовывоз</h3>
+          </div>
+          <div class="option-details">
+            <div class="detail-item">
+              <span class="detail-label">Время:</span>
+              <span class="detail-value">10-15 мин</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Адрес:</span>
+              <span class="detail-value">Санкт-Петербург, улица Голикова 40</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Скидка:</span>
+              <span class="detail-value">-5% от заказа</span>
+            </div>
+          </div>
+          <button class="option-btn outline">Забрать самому</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Якорь для заказа -->
+  <div id="order"></div>
+
+  <section id="contacts" class="contact-section">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-header">
+          <h2 class="section-title">Свяжитесь с нами</h2>
+          <p class="section-subtitle">Мы всегда готовы помочь и ответить на ваши вопросы</p>
+        </div>
+
+        <div class="contact-content">
+          <!-- Левая часть - Контактная информация -->
+          <div class="contact-info">
+            <div class="info-grid">
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-details">
+                  <h4>Адрес</h4>
+                  <p>улица Голикова 40, Санкт-Петербург</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="info-details">
+                  <h4>Телефон</h4>
+                  <p>+7 (123) 456-78-90</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fab fa-telegram"></i>
+                </div>
+                <div class="info-details">
+                  <h4>Telegram Bot</h4>
+                  <p>@shaverma_stop_bot</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="info-details">
+                  <h4>Режим работы</h4>
+                  <p>Круглосуточно 24/7</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Правая часть - Форма обратной связи -->
+          <div class="contact-form-wrapper">
+            <div class="form-header">
+              <h3>Форма обратной связи</h3>
+              <p>Оставьте сообщение и мы свяжемся с вами</p>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+              <div class="form-group">
+                <label for="name">Ваше имя</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Сообщение</label>
+                <textarea id="message" name="message" rows="4" placeholder="Расскажите, чем можем помочь..."></textarea>
+              </div>
+
+              <button type="submit" class="form-submit">
+                <i class="fas fa-paper-plane"></i>
+                Отправить сообщение
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <!-- Левая колонка - Логотип и описание -->
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <span class="stop-text">Stop</span>
+            <span class="road-sign">
+              <svg viewBox="0 0 120 140" class="stop-icon">
+                <rect x="55" y="110" width="10" height="30" fill="#777" rx="2" />
+                <circle cx="60" cy="60" r="50" fill="#e74c3c" stroke="white" stroke-width="5" />
+                <line x1="20" y1="60" x2="100" y2="60" stroke="white" stroke-width="15" stroke-linecap="round" />
+              </svg>
+            </span>
+            <span class="accent">Шаверма</span>
+          </div>
+          <p class="brand-description">Самая вкусная шаверма в городе. Готовим с любовью из свежих продуктов уже более 5 лет.</p>
+          <div class="social-links">
+            <a href="#" class="social-link telegram" aria-label="Telegram">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="#" class="social-link whatsapp" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" class="social-link instagram" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Средняя колонка - Контакты -->
+        <div class="footer-contacts">
+          <h3 class="footer-title">Контакты</h3>
+          <div class="contact-list">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="contact-details">
+                <span class="contact-label">Адрес:</span>
+                <span class="contact-value">ул. Голикова, 40<br>Санкт-Петербург</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div class="contact-details">
+                <span class="contact-label">Телефон:</span>
+                <a href="tel:+71234567890" class="contact-value phone-link">+7 (123) 456-78-90</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div class="contact-details">
+                <span class="contact-label">Режим работы:</span>
+                <span class="contact-value hours-text">Круглосуточно 24/7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Правая колонка - Быстрые ссылки -->
+        <div class="footer-links">
+          <h3 class="footer-title">Быстрые ссылки</h3>
+          <nav class="footer-nav">
+            <a href="#menu" class="footer-link">
+              <i class="fas fa-utensils"></i>
+              <span>Меню</span>
+            </a>
+            <a href="#delivery" class="footer-link">
+              <i class="fas fa-motorcycle"></i>
+              <span>Доставка</span>
+            </a>
+            <a href="#contacts" class="footer-link">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Контакты</span>
+            </a>
+            <a href="#order" class="footer-link">
+              <i class="fas fa-shopping-bag"></i>
+              <span>Заказать</span>
+            </a>
+          </nav>
+          <div class="footer-cta">
+            <div class="cta-info">
+              <span class="cta-text">Готовы заказать?</span>
+              <span class="cta-subtext">Доставка за 25-35 минут</span>
+            </div>
+            <button class="cta-button" onclick="scrollToSection('order'); return false;">
+              <i class="fas fa-shopping-cart"></i>
+              Заказать сейчас
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Нижняя часть -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <span>&copy; 2025 Шаверма Stop. Все права защищены.</span>
+        </div>
+        <div class="footer-legal">
+          <button class="legal-link" onclick="showPolicy(); return false;">Политика конфиденциальности</button>
+          <button class="legal-link" onclick="showTerms(); return false;">Условия использования</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
